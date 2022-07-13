@@ -5,7 +5,10 @@ public class AnimalTest {
         Animal c = new Animal("Bear", 10, 120, true, false, true);
         Animal d = new Animal("Oh my!", 10, 120, true, false, true);
         System.out.println(a.getSpecies());
-        System.out.println(Animal.getAll().size());
+        Animal.show();
+        a.run();
+        a.run();
+        a.run();
         
     }
 }

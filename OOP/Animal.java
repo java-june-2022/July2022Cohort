@@ -8,6 +8,7 @@ public class Animal {
     private String species;
     private int height;
     private int weight;
+    private int stamina;
     private boolean hasFur;
     private boolean hasWings;
     private boolean isLiving;
@@ -24,6 +25,7 @@ public class Animal {
         this.hasFur = hasFur;
         this.hasWings = hasWings;
         this.isLiving = isLiving;
+        this.stamina = 100;
         create(this.species);
         Animal.addToList(this);
     }
@@ -31,6 +33,15 @@ public class Animal {
     public void create(String species) {
         System.out.println("You have created a " + species);
     }
+
+    public void run() {
+        this.stamina-=3;
+        System.out.println(this.stamina);
+    }
+
+    
+
+
 
     // Getters and Setters
 
@@ -82,12 +93,20 @@ public class Animal {
         this.species = species;
     }
 
+    // Static methods
+
     public static ArrayList<Animal> getAll() {
         return all;
     }
 
     public static void setAll(ArrayList<Animal> all) {
         Animal.all = all;
+    }
+
+    public static void show() {
+        for (Animal animal : Animal.getAll()) {
+            System.out.println(animal.getSpecies());
+        }
     }
 
     public static void addToList(Animal animal) {
